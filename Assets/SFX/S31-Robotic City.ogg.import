@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/S31-Robotic City.ogg-12d527dcbb217bdac0a2d2cfa2344a56.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/S31-Robotic City.ogg"
+dest_files=[ "res://.import/S31-Robotic City.ogg-12d527dcbb217bdac0a2d2cfa2344a56.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

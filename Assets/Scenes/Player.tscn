@@ -1,0 +1,104 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Idle (1).png" type="Texture" id=2]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Idle (2).png" type="Texture" id=3]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Idle (3).png" type="Texture" id=4]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Idle (4).png" type="Texture" id=5]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Idle (5).png" type="Texture" id=6]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Idle (6).png" type="Texture" id=7]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Idle (7).png" type="Texture" id=8]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Idle (8).png" type="Texture" id=9]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Idle (9).png" type="Texture" id=10]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Idle (10).png" type="Texture" id=11]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Dead (1).png" type="Texture" id=12]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Dead (2).png" type="Texture" id=13]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Dead (3).png" type="Texture" id=14]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Dead (4).png" type="Texture" id=15]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Dead (5).png" type="Texture" id=16]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Dead (6).png" type="Texture" id=17]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Dead (7).png" type="Texture" id=18]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Dead (8).png" type="Texture" id=19]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Dead (9).png" type="Texture" id=20]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Dead (10).png" type="Texture" id=21]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Jump (8).png" type="Texture" id=22]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Jump (9).png" type="Texture" id=23]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Run (1).png" type="Texture" id=24]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Run (2).png" type="Texture" id=25]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Run (3).png" type="Texture" id=26]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Run (4).png" type="Texture" id=27]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Run (5).png" type="Texture" id=28]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Run (6).png" type="Texture" id=29]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Run (7).png" type="Texture" id=30]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Run (8).png" type="Texture" id=31]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Jump (1).png" type="Texture" id=32]
+[ext_resource path="res://Assets/GFX/Players/RobotFree/Jump (2).png" type="Texture" id=33]
+[ext_resource path="res://Assets/Scripts/PlayerAnimation.gd" type="Script" id=34]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "idle",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "die",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "fall",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": false,
+"name": "hurt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": false,
+"name": "jump",
+"speed": 14.96
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 103.531
+height = 255.732
+
+[node name="Player" type="KinematicBody2D" index="0"]
+
+position = Vector2( 555.929, 278.993 )
+scale = Vector2( 0.25, 0.25 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 30
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "idle"
+script = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -25, 6 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+

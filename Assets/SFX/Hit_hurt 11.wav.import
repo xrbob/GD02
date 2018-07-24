@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hit_hurt 11.wav-b518214455022595166d88612c8f3d36.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Hit_hurt 11.wav"
+dest_files=[ "res://.import/Hit_hurt 11.wav-b518214455022595166d88612c8f3d36.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
